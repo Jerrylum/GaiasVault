@@ -19,6 +19,7 @@ jobs:
           ServerLocation="ftps://${{ secrets.SECRET_FTP_LOGIN }}@$ServerIP/";
           LocalWorldSaves='./saves/';
           DistLocation='./dist/';
+
           Version=$(cat "$GITHUB_WORKSPACE/MAP-VERSION");
           SrcOverworld="$LocalWorldSaves$ServerIP/$LevelName/";
           SrcNether="$LocalWorldSaves$ServerIP/${LevelName}_nether/";
@@ -45,7 +46,7 @@ jobs:
       - name: Archive Zip File
         uses: actions/upload-artifact@v2
         with:
-          name: $ProjectName v$Version.zip
+          name: ${{ env.ProjectName }} v${{ env.Version }}.zip
           path: |
-            $DistFolder/**
+            ${{ env.DistFolder }}/**/*
             
