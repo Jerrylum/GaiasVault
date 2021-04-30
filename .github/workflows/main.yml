@@ -21,12 +21,6 @@ jobs:
           LocalWorldSaves: './saves/'
           DistLocation: './dist/'
           Version: $(cat "$GITHUB_WORKSPACE/MAP-VERSION")
-          SrcOverworld: "${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}/"
-          SrcNether: "${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}_nether/"
-          RemoteOverworld: "${{ env.ServerLocation }}${{ env.LevelName }}/"
-          RemoteNether: "${{ env.ServerLocation }}${{ env.LevelName }}_nether/"
-          DistFolder: "${{ env.DistLocation }}/export"
-          DistMapFolder: "${{ env.DistFolder }}/${{ env.ProjectName }} World v${{ env.Version }}"
 
         run: |
           SrcOverworld="${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}/";
