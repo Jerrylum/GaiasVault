@@ -41,7 +41,7 @@ jobs:
       - name: Archive Zip File
         uses: actions/upload-artifact@v2
         with:
-          name: Project3042.zip
+          name: Project3042
           path: |
             ./dist/export/**
         
