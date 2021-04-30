@@ -1,10 +1,19 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#161417">
+    <meta name="description" content="Project3042, a landscape size Minecraft prison via chunk ban, inescapable and indestructible.">
+    <meta name="robots" content="index,follow">
 
+    <link rel="preload" href="./static/font/MinecraftRegular-Bmg3.otf" as="font">
+    <link rel="preload" href="./static/style/index.css" as="style">
+    <link rel="preload" href="./static/js/index.js" as="script">
+    <link rel="preload" href="./static/img/header.png" as="image">
     <link rel="stylesheet" href="./static/style/index.css">
+    <link rel="license" href="https://github.com/Jerrylum/Project3042/LICENSE">
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
     <script defer src="./static/js/index.js"></script>
@@ -29,13 +38,13 @@
                 <h2>A landscape size prison via chunk ban</h2>
             </div>
             <div id="Download">
-                <a id="DownloadButton" target="_blank" href="https://github.com/Jerrylum/Project3042/releases" :href="GitHubMapLink">Download Map {{VersionName}}</a><br/>
-                <a id="ReleasePageLink" target="_blank" href="https://github.com/Jerrylum/Project3042/releases">or visit our release page</a>
+                <a id="DownloadButton" target="_blank" href="https://github.com/Jerrylum/Project3042/releases" :href="GitHubMapLink" rel="noopener">Download Map {{VersionName}}</a><br/>
+                <a id="ReleasePageLink" target="_blank" href="https://github.com/Jerrylum/Project3042/releases" rel="noopener">or visit our release page</a>
             </div>
             <div id="Discord">
                 <p>Please join our discord server as well</p>
-                <a href="https://discord.gg/BYhFJxN6yb" id="SeenSven"></a>
-                <a href="https://discord.gg/aaFQD2X9ys" id="TheDeafCreeper"></a>
+                <a href="https://discord.gg/BYhFJxN6yb" id="SeenSven" title="Go to SeenSven's Discord server"></a>
+                <a href="https://discord.gg/aaFQD2X9ys" id="TheDeafCreeper" title="Go to Deaf's Discord server"></a>
             </div>
         </div>
         <div id="PageMain">
@@ -43,10 +52,10 @@
                 <h1>Downloads</h1>
                 <ul>
                     <li><a href="https://github.com/Jerrylum/Project3042/releases" :href="GitHubMapLink">Map (GitHub)</a></li>
-                    <li><a href="">Map (Google Drive)</a></li>
-                    <li><a href="">Quick Reference Hand Book</a></li>
-                    <li><a href="">Guard Cheatsheet</a></li>
-                    <li><a href="">Warden Room MiniMap</a></li>
+                    <li><a href="https://drive.google.com">Map (Google Drive)</a></li>
+                    <li><a href="https://drive.google.com">Quick Reference Hand Book</a></li>
+                    <li><a href="https://drive.google.com">Guard Cheatsheet</a></li>
+                    <li><a href="https://drive.google.com">Warden Room MiniMap</a></li>
                 </ul>
             </div>
             <div id="Questions">
@@ -55,17 +64,17 @@
                 <h2>How long did this take to build?</h2>
                 <p>Ah, 4 weeks.</p>
     
-                <h2>How to install the map?</h2>
-                <p>Watch Deaf's Video <a href="https://www.youtube.com/channel/UCuHGMJ29QtxDJ-ekNScKdkQ">(Click Here)</a></p>
+                <h2>How to use the map?</h2>
+                <p>Check out the readme file in the world download or watch Deaf's Video <a href="https://www.youtube.com/channel/UCuHGMJ29QtxDJ-ekNScKdkQ">(Click Here)</a></p>
                 
                 <h2>Can you provide schematics file of the prison?</h2>
-                <p>There's a schematic located in the ZIP folder with the world.</p>
+                <p>There's a schematic located in the ZIP folder with the world. Please read the Quick Reference Hand Book for more information</p>
     
                 <h2>How to lock a prisoner?</h2>
                 <p>Check out the Quick Reference Hand Book.</p>
     
                 <h2>How could a guard leave / enter the prison?</h2>
-                <p>Guards can enter via respawn, stasis, or the guard portal and can exit via guard portal or emergency exit. Please check out the Quick Reference Hand Book for more information.</p>
+                <p>Guards can enter via respawn, stasis, or the guard portal and can exit via guard portal or emergency exit. Please check out the Quick Reference Hand Book.</p>
     
                 <h2>How does the chunk ban machine work?</h2>
                 <p>The chunk ban machine works by having a dropper repeatedly dispense a skulker full of max size books. When the server tries to send the information in the books to the client, it causes some sort of error which causes them to be kicked.</p>
@@ -109,7 +118,7 @@
             </div>
             <hr/>
             <div id="GitHubPageLogo">
-                <img src="./static/img/GitHubPage.png"/>
+                <img src="./static/img/GitHubPage.png" alt="Just a GitHub Page logo"/>
             </div>
         </div>
     </div>
