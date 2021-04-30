@@ -12,22 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2      
 
-        env:
-          ProjectName: 'Project3042';
-          LevelName: 'The New Prison';
-          ServerIP: "${{ secrets.SECRET_FTP_HOST }}";
-          ServerLocation: "ftps://${{ secrets.SECRET_FTP_LOGIN }}@${{ env.ServerIP }}/";
-          LocalWorldSaves: './saves/';
-          DistLocation: './dist/';
-          Version: $(cat "$GITHUB_WORKSPACE/MAP-VERSION");
-          SrcOverworld: "${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}/";
-          SrcNether: "${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}_nether/";
-          RemoteOverworld: "${{ env.ServerLocation }}${{ env.LevelName }}/";
-          RemoteNether: "${{ env.ServerLocation }}${{ env.LevelName }}_nether/";
-          DistFolder: "${{ env.DistLocation }}/export";
-          DistMapFolder: "${{ env.DistFolder }}/${{ env.ProjectName }} World v${{ env.Version }}";
-
       - name: Export
+        env:
+          ProjectName: 'Project3042'
+          LevelName: 'The New Prison'
+          ServerIP: "${{ secrets.SECRET_FTP_HOST }}"
+          ServerLocation: "ftps://${{ secrets.SECRET_FTP_LOGIN }}@${{ env.ServerIP }}/"
+          LocalWorldSaves: './saves/'
+          DistLocation: './dist/'
+          Version: $(cat "$GITHUB_WORKSPACE/MAP-VERSION")
+          SrcOverworld: "${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}/"
+          SrcNether: "${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}_nether/"
+          RemoteOverworld: "${{ env.ServerLocation }}${{ env.LevelName }}/"
+          RemoteNether: "${{ env.ServerLocation }}${{ env.LevelName }}_nether/"
+          DistFolder: "${{ env.DistLocation }}/export"
+          DistMapFolder: "${{ env.DistFolder }}/${{ env.ProjectName }} World v${{ env.Version }}"
+
         run: |
           mkdir -p "${{ env.LocalWorldSaves }}";
           mkdir -p "${{ env.DistMapFolder }}";
