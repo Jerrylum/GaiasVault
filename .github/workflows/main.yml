@@ -41,9 +41,7 @@ jobs:
       - name: Archive Zip File
         uses: actions/upload-artifact@v2
         with:
-          name: Project3042 v${{ env.VERSION}}.zip
+          name: Project3042.zip
           path: |
             ./dist/export/**
-        env:
-          VERSION: $(cat "$GITHUB_WORKSPACE/MAP-VERSION")
         
