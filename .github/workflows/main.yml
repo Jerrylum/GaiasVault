@@ -29,25 +29,32 @@ jobs:
           DistMapFolder: "${{ env.DistFolder }}/${{ env.ProjectName }} World v${{ env.Version }}"
 
         run: |
+          SrcOverworld="${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}/";
+          SrcNether="${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}_nether/";
+          RemoteOverworld="${{ env.ServerLocation }}${{ env.LevelName }}/";
+          RemoteNether="${{ env.ServerLocation }}${{ env.LevelName }}_nether/";
+          DistFolder="${{ env.DistLocation }}/export";
+          DistMapFolder="${{ env.DistFolder }}/${{ env.ProjectName }} World v${{ env.Version }}";
+
           mkdir -p "${{ env.LocalWorldSaves }}";
-          mkdir -p "${{ env.DistMapFolder }}";
+          mkdir -p "${{ DistMapFolder }}";
 
-          wget -P "${{ env.LocalWorldSaves }}" -r --no-parent "${{ env.RemoteOverworld }}";
-          wget -P "${{ env.LocalWorldSaves }}" -r --no-parent "${{ env.RemoteNether }}";
+          wget -P "${{ env.LocalWorldSaves }}" -r --no-parent "${{ RemoteOverworld }}";
+          wget -P "${{ env.LocalWorldSaves }}" -r --no-parent "${{ RemoteNether }}";
 
-          cp -a "$GITHUB_WORKSPACE/MAP-README" "${{ env.DistFolder }}/READ ME.txt"
-          cp -a "${{ env.SrcOverworld }}data" "${{ env.DistMapFolder }}";
-          cp -a "${{ env.SrcOverworld }}poi" "${{ env.DistMapFolder }}";
-          cp -a "${{ env.SrcOverworld }}region" "${{ env.DistMapFolder }}";
-          cp -a "${{ env.SrcOverworld }}icon.png" "${{ env.DistMapFolder }}";
-          cp -a "${{ env.SrcOverworld }}level.dat" "${{ env.DistMapFolder }}";
-          cp -a "${{ env.SrcOverworld }}uid.dat" "${{ env.DistMapFolder }}";
-          cp -a "${{ env.SrcNether }}DIM-1" "${{ env.DistMapFolder }}";
+          cp -a "$GITHUB_WORKSPACE/MAP-README" "${{ DistFolder }}/READ ME.txt"
+          cp -a "${{ SrcOverworld }}data" "${{ DistMapFolder }}";
+          cp -a "${{ SrcOverworld }}poi" "${{ DistMapFolder }}";
+          cp -a "${{ SrcOverworld }}region" "${{ DistMapFolder }}";
+          cp -a "${{ SrcOverworld }}icon.png" "${{ DistMapFolder }}";
+          cp -a "${{ SrcOverworld }}level.dat" "${{ DistMapFolder }}";
+          cp -a "${{ SrcOverworld }}uid.dat" "${{ DistMapFolder }}";
+          cp -a "${{ SrcNether }}DIM-1" "${{ DistMapFolder }}";
 
       - name: Archive Zip File
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.ProjectName }} v${{ env.Version }}.zip
           path: |
-            ${{ env.DistFolder }}/**/*
+            ${{ env.DistLocation }}/export/**/*
             
