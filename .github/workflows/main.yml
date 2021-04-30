@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup
+      - name: Export
         run: |
           ProjectName='Project3042';
           LevelName='The New Prison';
@@ -20,9 +20,6 @@ jobs:
           LocalWorldSaves='./saves/';
           DistLocation='./dist/';
           Version=$(cat "$GITHUB_WORKSPACE/MAP-VERSION");
-
-      - name: Download Files
-        run: |
           SrcOverworld="$LocalWorldSaves$ServerIP/$LevelName/";
           SrcNether="$LocalWorldSaves$ServerIP/${LevelName}_nether/";
           RemoteOverworld="$ServerLocation$LevelName/";
@@ -36,8 +33,6 @@ jobs:
           wget -P "$LocalWorldSaves" -r --no-parent "$RemoteOverworld";
           wget -P "$LocalWorldSaves" -r --no-parent "$RemoteNether";
 
-      - name: Merge
-        run: |
           cp -a "$GITHUB_WORKSPACE/MAP-README " "$DistFolder/READ ME.txt"
           cp -a "${SrcOverworld}data" "$DistMapFolder";
           cp -a "${SrcOverworld}poi" "$DistMapFolder";
