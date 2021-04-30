@@ -1,0 +1,12 @@
+How to use the world:
+    1. Copy the "Project3042 World" folder into your minecraft saves folder (%appdata%/.minecraft/saves)
+    2. Open Minecraft
+
+How to paste the prison into a world:
+    1. Download World Edit
+    2. Copy Prison.schem into your schematics folder
+    3. Run /schematic load Prison
+    4. Run //paste -e where you want the prison pasted.
+    5. Fix issues with the redstone. You can find more information in the Quick Reference Hand Book.
+    6. Create and link the nether side of the portal. You can get the needed cords by going to the middle of the inner portal and dividing the x and z cords by 8 (rounding down). Once you have the new cords build a portal (anything over 5 wide may not work correctly) and shell around it.
+    7. Respawn entities, such as the elder guardians.
