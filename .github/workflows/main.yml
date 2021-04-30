@@ -13,15 +13,6 @@ jobs:
       - uses: actions/checkout@v2      
 
       - name: Export
-        env:
-          ProjectName: 'Project3042'
-          LevelName: 'The New Prison'
-          ServerIP: "${{ secrets.SECRET_FTP_HOST }}"
-          ServerLocation: "ftps://${{ secrets.SECRET_FTP_LOGIN }}@${{ env.ServerIP }}/"
-          LocalWorldSaves: './saves/'
-          DistLocation: './dist/'
-          Version: $(cat "$GITHUB_WORKSPACE/MAP-VERSION")
-
         run: |
           SrcOverworld="${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}/";
           SrcNether="${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}_nether/";
@@ -44,6 +35,14 @@ jobs:
           cp -a "${{ SrcOverworld }}level.dat" "${{ DistMapFolder }}";
           cp -a "${{ SrcOverworld }}uid.dat" "${{ DistMapFolder }}";
           cp -a "${{ SrcNether }}DIM-1" "${{ DistMapFolder }}";
+        env:
+          ProjectName: 'Project3042'
+          LevelName: 'The New Prison'
+          ServerIP: "${{ secrets.SECRET_FTP_HOST }}"
+          ServerLocation: "ftps://${{ secrets.SECRET_FTP_LOGIN }}@${{ env.ServerIP }}/"
+          LocalWorldSaves: './saves/'
+          DistLocation: './dist/'
+          Version: $(cat "$GITHUB_WORKSPACE/MAP-VERSION")
 
       - name: Archive Zip File
         uses: actions/upload-artifact@v2
