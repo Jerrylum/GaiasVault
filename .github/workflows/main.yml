@@ -33,7 +33,7 @@ jobs:
           wget -P "$LocalWorldSaves" -r --no-parent "$RemoteOverworld";
           wget -P "$LocalWorldSaves" -r --no-parent "$RemoteNether";
 
-          cp -a "$GITHUB_WORKSPACE/MAP-README " "$DistFolder/READ ME.txt"
+          cp -a "$GITHUB_WORKSPACE/MAP-README" "$DistFolder/READ ME.txt"
           cp -a "${SrcOverworld}data" "$DistMapFolder";
           cp -a "${SrcOverworld}poi" "$DistMapFolder";
           cp -a "${SrcOverworld}region" "$DistMapFolder";
