@@ -8,46 +8,39 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-
     steps:
-      - uses: actions/checkout@v2      
+      - uses: actions/checkout@v2
 
       - name: Export
         run: |
-          SrcOverworld="${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}/";
-          SrcNether="${{ env.LocalWorldSaves }}${{ env.ServerIP }}/${{ env.LevelName }}_nether/";
-          RemoteOverworld="${{ env.ServerLocation }}${{ env.LevelName }}/";
-          RemoteNether="${{ env.ServerLocation }}${{ env.LevelName }}_nether/";
-          DistFolder="${{ env.DistLocation }}/export";
-          DistMapFolder="${{ env.DistFolder }}/${{ env.ProjectName }} World v${{ env.Version }}";
-
-          mkdir -p "${{ env.LocalWorldSaves }}";
-          mkdir -p "${{ DistMapFolder }}";
-
-          wget -P "${{ env.LocalWorldSaves }}" -r --no-parent "${{ RemoteOverworld }}";
-          wget -P "${{ env.LocalWorldSaves }}" -r --no-parent "${{ RemoteNether }}";
-
-          cp -a "$GITHUB_WORKSPACE/MAP-README" "${{ DistFolder }}/READ ME.txt"
-          cp -a "${{ SrcOverworld }}data" "${{ DistMapFolder }}";
-          cp -a "${{ SrcOverworld }}poi" "${{ DistMapFolder }}";
-          cp -a "${{ SrcOverworld }}region" "${{ DistMapFolder }}";
-          cp -a "${{ SrcOverworld }}icon.png" "${{ DistMapFolder }}";
-          cp -a "${{ SrcOverworld }}level.dat" "${{ DistMapFolder }}";
-          cp -a "${{ SrcOverworld }}uid.dat" "${{ DistMapFolder }}";
-          cp -a "${{ SrcNether }}DIM-1" "${{ DistMapFolder }}";
-        env:
-          ProjectName: 'Project3042'
-          LevelName: 'The New Prison'
-          ServerIP: "${{ secrets.SECRET_FTP_HOST }}"
-          ServerLocation: "ftps://${{ secrets.SECRET_FTP_LOGIN }}@${{ env.ServerIP }}/"
-          LocalWorldSaves: './saves/'
-          DistLocation: './dist/'
-          Version: $(cat "$GITHUB_WORKSPACE/MAP-VERSION")
-
+          ProjectName='Project3042';
+          LevelName='The New Prison';
+          ServerIP="${{ secrets.SECRET_FTP_HOST }}";
+          ServerLocation="ftps://${{ secrets.SECRET_FTP_LOGIN }}@$ServerIP/";
+          LocalWorldSaves='./saves/';
+          DistLocation='./dist/';
+          Version=$(cat "$GITHUB_WORKSPACE/MAP-VERSION");
+          SrcOverworld="$LocalWorldSaves$ServerIP/$LevelName/";
+          SrcNether="$LocalWorldSaves$ServerIP/${LevelName}_nether/";
+          RemoteOverworld="$ServerLocation$LevelName/";
+          RemoteNether="$ServerLocation${LevelName}_nether/";
+          DistFolder="$DistLocation/export";
+          DistMapFolder="$DistFolder/$ProjectName World v$Version";
+          mkdir -p "$LocalWorldSaves";
+          mkdir -p "$DistMapFolder";
+          wget -P "$LocalWorldSaves" -r --no-parent "$RemoteOverworld";
+          wget -P "$LocalWorldSaves" -r --no-parent "$RemoteNether";
+          cp -a "$GITHUB_WORKSPACE/MAP-README" "$DistFolder/READ ME.txt"
+          cp -a "${SrcOverworld}data" "$DistMapFolder";
+          cp -a "${SrcOverworld}poi" "$DistMapFolder";
+          cp -a "${SrcOverworld}region" "$DistMapFolder";
+          cp -a "${SrcOverworld}icon.png" "$DistMapFolder";
+          cp -a "${SrcOverworld}level.dat" "$DistMapFolder";
+          cp -a "${SrcOverworld}uid.dat" "$DistMapFolder";
+          cp -a "${SrcNether}DIM-1" "$DistMapFolder";
       - name: Archive Zip File
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.ProjectName }} v${{ env.Version }}.zip
+          name: Project3042 v$(cat "$GITHUB_WORKSPACE/MAP-VERSION").zip
           path: |
-            ${{ env.DistLocation }}/export/**/*
-            
+            ./dist/export/**
