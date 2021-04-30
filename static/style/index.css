@@ -1,0 +1,283 @@
+@font-face {
+    font-family: TheMinecraft;
+    font-weight: normal;
+    src: url("../font/MinecraftRegular-Bmg3.otf") format("opentype");
+}
+
+html {
+    font-family: TheMinecraft !important;
+    font-size: calc(100vh / 32.14) !important;
+    font-weight: normal !important; 
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#PageHeader {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+#PageHeader #Title {
+    padding-top: 9.1rem;
+    text-align: center;
+    width: 100%;
+}
+
+#PageHeader #Title h1 {
+    margin: 0;
+    font-size: 4.01rem;
+    font-weight: normal;
+    line-height: 4.01rem;
+}
+
+#PageHeader #Title h2 {
+    margin: 0rem 0 0 0;
+    font-size: 1.71rem;
+    font-weight: normal;
+    line-height: 1.71rem;
+}
+
+#PageHeader #Download {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#PageHeader #Download #DownloadButton {
+    min-width: 8rem;
+    height: 1.78rem;
+    border-radius: 0.42rem;
+    background-color: #161417;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.43);
+    font-size: 0.85rem;
+    line-height: 1.78rem;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    padding: 0.2rem 1rem 0;
+    color: white !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    user-select: none;
+}
+
+#PageHeader #Download #ReleasePageLink {
+    height: 1rem;
+    font-size: 0.64rem;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    color: white !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    padding-top: 0.2rem;
+}
+
+#PageHeader #Download #ReleasePageLink:hover {
+    color: #00D2FF !important;
+    text-decoration: underline !important;
+}
+
+#PageHeader #Discord {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#PageHeader #Discord p {
+    height: 1.78rem;
+    font-size: 0.85rem;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+#PageHeader #Discord a {
+    height: 2.57rem;
+    width: 2.57rem;
+    border-radius: 100%;
+    background-color: #fff;
+    border: 0.17rem solid #7289DA;
+    display: inline-block;
+    margin: 0 0.3rem;
+    cursor: pointer;
+    text-decoration: none !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#PageHeader #Discord #SeenSven {
+    background-image: url('../img/seensven.jpg');
+}
+
+#PageHeader #Discord #TheDeafCreeper {
+    background-image: url('../img/deaf.jpg');
+}
+
+#PageMain {
+    text-align: left;
+    margin: 0.3rem auto;
+    max-width: 28.57rem;
+    min-width: 28.57rem;
+    /* background-color: aliceblue; */
+    display: inline-block;
+}
+
+#PageMain > div {
+    margin: 3.27rem auto;
+}
+
+#PageMain h1 {
+    margin: 0 0 1.2rem 0;
+    font-size: 1.71rem;
+    font-weight: normal;
+    line-height: 1.71rem;
+}
+
+#PageMain #Downloads ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+#PageMain #Downloads li {
+    line-height: 1.3rem;
+    list-style: none;
+}
+
+#PageMain #Downloads li:before {
+    width: 0.5rem;
+    content: "·";
+    vertical-align: middle;
+    position: relative;
+    top: -0.05rem;
+    left: -0.4rem;
+    font-size: 0.8rem;
+}
+
+#PageMain a {
+    color: black !important;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+#PageMain a:hover {
+    color: #00D2FF !important;
+    text-decoration: underline !important;
+}
+
+#PageMain h1 {
+    margin: 0 0 1.8rem 0;
+    font-size: 1.71rem;
+    font-weight: normal;
+    line-height: 1.71rem;
+}
+
+#PageMain h2 {
+    margin: 0 0 0.2rem 0;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1rem;
+}
+
+#PageMain p {
+    margin: 0 0 1.6rem 0;
+    font-size: 0.85rem !important;
+    font-weight: normal;
+    line-height: 0.85rem;
+    color: #575757 !important;
+}
+
+#PageMain ol {
+    font-size: 0.85rem !important;
+    color: #575757 !important;
+    margin: 0 0 1.6rem 0;
+}
+
+#PageMain ol * {
+    margin: 0 0 0.4rem 0;
+}
+
+#PageFooter {
+    background-color: #161417;
+    color: #fff;
+    text-align: left;
+    padding-top: 3.57rem;
+    padding-bottom: 1.8rem;
+}
+
+#PageFooter #Author {
+    max-width: 28.57rem;
+    margin: auto;
+}
+
+#PageFooter #Author #AuthorLogo {
+    background-image: url('../img/jerry.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    width: 3.57rem;
+    height: 3.57rem;
+}
+
+#PageFooter #Author #AuthorInfo {
+    font-size: 0.85rem;
+    margin-left: 4.4rem;
+}
+
+#PageFooter #Author #AuthorInfo #AuthorContact {
+    margin: 1rem 0 0;
+    font-size: 0.64rem;
+    color: #949494;
+}
+
+#PageFooter a {
+    color: #949494 !important;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+#PageFooter a:hover {
+    color: #005c70 !important;
+    text-decoration: underline !important;
+}
+
+#PageFooter hr {
+    max-width: 28.57rem;
+    margin: 1rem auto 0;
+    border-color: #949494;
+}
+
+#PageFooter #GitHubPageLogo {
+    max-width: 28.57rem;
+    margin: 0.9rem auto 0;
+}
+
+#PageFooter #GitHubPageLogo > img {
+    height: 0.9rem;
+}
+
+@media (orientation:portrait) {
+    html {
+        font-size: calc(100vw / 39) !important;
+    }
+
+    #PageHeader  {
+        height: 35rem;
+    }
+}

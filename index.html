@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./static/style/index.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+    <script defer src="./static/js/index.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YDXR1TR9LN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YDXR1TR9LN');
+    </script>
+
+    <title>Project3042 Official Website</title>
+</head>
+<body>
+    <div id="Page">
+        <div id="PageHeader">
+            <div id="Title">
+                <h1>Project3042</h1>
+                <h2>A landscape size prison via chunk ban</h2>
+            </div>
+            <div id="Download">
+                <a id="DownloadButton" target="_blank" href="https://github.com/Jerrylum/Project3042/releases" :href="GitHubMapLink">Download Map {{VersionName}}</a><br/>
+                <a id="ReleasePageLink" target="_blank" href="https://github.com/Jerrylum/Project3042/releases">or visit our release page</a>
+            </div>
+            <div id="Discord">
+                <p>Please join our discord server as well</p>
+                <a href="https://discord.gg/BYhFJxN6yb" id="SeenSven"></a>
+                <a href="https://discord.gg/aaFQD2X9ys" id="TheDeafCreeper"></a>
+            </div>
+        </div>
+        <div id="PageMain">
+            <div id="Downloads">
+                <h1>Downloads</h1>
+                <ul>
+                    <li><a href="https://github.com/Jerrylum/Project3042/releases" :href="GitHubMapLink">Map (GitHub)</a></li>
+                    <li><a href="">Map (Google Drive)</a></li>
+                    <li><a href="">Quick Reference Hand Book</a></li>
+                    <li><a href="">Guard Cheatsheet</a></li>
+                    <li><a href="">Warden Room MiniMap</a></li>
+                </ul>
+            </div>
+            <div id="Questions">
+                <h1>Frequently Asked Questions</h1>
+    
+                <h2>How long did this take to build?</h2>
+                <p>Ah, 4 weeks.</p>
+    
+                <h2>How to install the map?</h2>
+                <p>Watch Deaf's Video <a href="https://www.youtube.com/channel/UCuHGMJ29QtxDJ-ekNScKdkQ">(Click Here)</a></p>
+                
+                <h2>Can you provide schematics file of the prison?</h2>
+                <p>There's a schematic located in the ZIP folder with the world.</p>
+    
+                <h2>How to lock a prisoner?</h2>
+                <p>Check out the Quick Reference Hand Book.</p>
+    
+                <h2>How could a guard leave / enter the prison?</h2>
+                <p>Guards can enter via respawn, stasis, or the guard portal and can exit via guard portal or emergency exit. Please check out the Quick Reference Hand Book for more information.</p>
+    
+                <h2>How does the chunk ban machine work?</h2>
+                <p>The chunk ban machine works by having a dropper repeatedly dispense a skulker full of max size books. When the server tries to send the information in the books to the client, it causes some sort of error which causes them to be kicked.</p>
+    
+                <h2>Is chunk ban cheating?</h2>
+                <p>Ban Books can be made in vanilla survival. It can then just be copied to fill up a shulker box, so it does not count as cheating.</p>
+    
+                <h2>Why chunk ban is not working?</h2>
+                <p>Chunk banning does not work in singleplayer, but if the chunk ban machines are not working on a server, make sure that you have escape mode enabled. The outer chunk bans are disabled and inner chunk bans locked when escape mode is off.</p>
+    
+                <h2>I found a way to escape the prison. What should I do?</h2>
+                <p>You can post the method in the #prison-discussion channel in Deaf's Discord, or you could wait for an event to try it either live on stream or just with trained guards. Make sure that your escape attempt stays within the rules however, as if it does not it does not count.
+                    <br/><br/>Escape rules:
+                    <br/>
+                </p>
+                <ol>
+                    <li>If testing in single player, assume that you cannot walk past the chunk bans (if you get a lag spike at some point that's usually a good indicator you walked into one)</li>
+                    <li>Make sure it works in survival, there's no point in trying a creative only escape attempt.</li>
+                    <li>Try not to rely on to much luck. While you can technically chorus all the way to the guard area from the portal room (if you ignore chunkbans) the odds of you actually doing it are low.</li>
+                    <li>Every item you use must be obtainable in 1.16 survival (No god sets that were obtained in 1.12 or something)</li>
+                    <li>If your escape involves using items somewhere past the first bed gate, make sure you actually have a way to get items past the first bed gate.</li>
+                    <li>Make sure you're on at least easy difficulty, but normal or hard is better.</li>
+                    <li>Do not switch out of survival once you start an attack, a possible exception to this rule is if you misplace a block causing you to be trapped, you can then break that block using creative.</li>
+                </ol>
+            </div>
+        </div>
+        <div id="PageFooter">
+            <div id="Author" class="clearfix">
+                <div id="AuthorLogo">
+    
+                </div>
+                <div id="AuthorInfo">
+                    <span style="color: #949494">The Author</span><br/>
+                    <span>Jerry, Minecraft plugin developer. I enjoy using technology to improve productivity and reduce the likelihood of making mistakes.</span>
+                    <div id="AuthorContact">
+                        <a href="https://github.com/Jerrylum">GitHub</a>
+                        &nbsp;&nbsp;/&nbsp;&nbsp;
+                        <a href="https://github.com/404/">Fax (don’t)</a>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div id="GitHubPageLogo">
+                <img src="./static/img/GitHubPage.png"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
