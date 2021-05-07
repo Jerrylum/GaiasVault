@@ -6,7 +6,7 @@ new Vue({
         }
     },
     created() {
-        fetch('https://api.github.com/repos/Jerrylum/Project3042/releases')
+        fetch('https://api.github.com/repos/Jerrylum/GaiasVault/releases')
         .then((response) => response.json())
         .then((info) => this.HandleGitHubReleaseInfo(info));      
     },
@@ -26,7 +26,7 @@ new Vue({
         }
     },
     data: {
-        GitHubMapLink: 'https://github.com/Jerrylum/Project3042/releases/',
+        GitHubMapLink: 'https://github.com/Jerrylum/GaiasVault/releases/',
         Version: ''
     }
 });
