@@ -9,10 +9,12 @@ $SrcOverworld = "$ServerLocation$LevelName/";
 $SrcNether = "$ServerLocation$LevelName" + "_nether/";
 $DistFolder = "$DistLocation$LevelName v$Version";
 $DistMapFolder = "$DistFolder/$LevelName World v$Version";
+$DistSchemFile = "$DistFolder/$LevelName" + "_$Version.schem";
 
 mkdir "$DistFolder";
 mkdir "$DistMapFolder";
-cp "./MAP-README" "$DistFolder";
+cp "./MAP-README" "$DistFolder/Read Me.txt";
+cp "$ServerLocation$LevelName.schem" "$DistSchemFile";
 cp -Recurse "$SrcOverworld/data" "$DistMapFolder";
 cp -Recurse "$SrcOverworld/poi" "$DistMapFolder";
 cp -Recurse "$SrcOverworld/region" "$DistMapFolder";
