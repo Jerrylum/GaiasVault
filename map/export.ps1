@@ -1,7 +1,7 @@
 $LevelName = 'Gaias Vault';
 $ServerLocation = './server/';
 $DistLocation = './dist/';
-$Version = '0.9';
+$Version = '1';
 
 #####################################################################
 
