@@ -1,7 +1,7 @@
 $LevelName = 'Gaias Vault';
 $ServerLocation = './server/';
 $DistLocation = './dist/';
-$Version = '1';
+$Version = '1.1';
 
 #####################################################################
 
@@ -9,7 +9,7 @@ $SrcOverworld = "$ServerLocation$LevelName/";
 $SrcNether = "$ServerLocation$LevelName" + "_nether/";
 $DistFolder = "$DistLocation$LevelName v$Version";
 $DistMapFolder = "$DistFolder/$LevelName World v$Version";
-$DistSchemFile = "$DistFolder/$LevelName" + "_$Version.schem";
+$DistSchemFile = "$DistFolder/$LevelName" + " v$Version.schem";
 
 mkdir "$DistFolder";
 mkdir "$DistMapFolder";
